@@ -33,14 +33,11 @@ aForce = np.array(aForce)
 bForce = np.array(bForce)
 
 xForce, residuals, rank, s = np.linalg.lstsq(aForce, bForce, rcond=None)
-Fb_x, Fb_y, Fb_z, m_est = xForce
+Fb_x, Fb_y, Fb_z, m = xForce
 
-
-# Estimating the tourque bias and mass
+# Estimating the tourque bias and mass center
 aTorque = []
 bTorque = []
-
-m = m_est
 
 for i in range(N):
     Ai = np.array([
@@ -65,7 +62,7 @@ tau_bx, tau_by, tau_bz, r_x, r_y, r_z = xTorque
 Fb = np.array([Fb_x, Fb_y, Fb_z])
 tau_b = np.array([tau_bx, tau_by, tau_bz])
 r = np.array([r_x, r_y, r_z])
-#print("Estimated Force Biases:", Fb)
-#print("Estimated Mass:", m)
-#print("Estimated Torque Biases:", tau_b)
-#print("Estimated Center of Mass:", r)
+print("Estimated Force Biases:", Fb)
+print("Estimated Mass:", m)
+print("Estimated Torque Biases:", tau_b)
+print("Estimated Center of Mass:", r)
