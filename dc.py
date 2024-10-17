@@ -3,7 +3,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 df = pd.read_csv('./Data/0-calibration_fts-accel.csv', header=0, delimiter=',')
-# Reading the data
 Fx = df['fx'].values
 Fy = df['fy'].values
 Fz = df['fz'].values
