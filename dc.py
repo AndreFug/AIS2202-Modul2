@@ -14,7 +14,7 @@ gy = df['gy'].values
 gz = df['gz'].values
 
 # Estimating the force bias and mass
-K = len(Fx) # 24 Samples
+K = len(Fx) # 24 Orientations
 
 aForce = []
 bForce = []
